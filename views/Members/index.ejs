@@ -1,0 +1,53 @@
+<div class="container">
+	<h3>Members Listing</h3>
+	<table class='table table-hover table-condensed'>
+	<tr>
+
+	<th> firstname </th>
+
+	<th> lastname </th>
+
+	<th> slug </th>
+
+	<th> publish </th>
+
+	<th> biography </th>
+
+	<th> quote </th>
+
+	<th> picture </th>
+
+	<th></th>
+	<th></th>
+	<th></th>
+</tr>
+	<% _.forEach(memberss, function(members) { %>
+    		<tr data-id="<%=members.id %>" data-model="members">
+		
+			<td><%= members.firstname%></td>
+		
+			<td><%= members.lastname%></td>
+		
+			<td><%= members.slug%></td>
+		
+			<td><%= members.publish%></td>
+		
+			<td><%= members.biography%></td>
+		
+			<td><%= members.quote%></td>
+		
+			<td><%= members.picture%></td>
+		
+			<td><a href="/members/show/<%=members.id %>"  class="btn btn-primary btn-sm" role="button">Show</a></td>
+			<td><a href="/members/edit/<%=members.id %>"  class="btn btn-primary btn-sm" role="button">Edit</a></td>
+
+			<td><form action="/members/destroy/<%=members.id %>" method="POST">
+				<input type="hidden" name="_method" value="delete"/>
+				<input type="submit" value="Delete"  class="btn btn-danger btn-sm" role="button"/>
+			</form></td>
+		</tr>
+<% }) %>
+	</table>
+	<a href="/members/new/" class="btn btn-success btn-sm" role="button">New Members</a> |
+	<a href="/">all scaffolds</a>
+</div>

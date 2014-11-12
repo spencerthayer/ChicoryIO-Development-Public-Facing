@@ -1,0 +1,57 @@
+<div class="container">
+	<h3>Portfolio Listing</h3>
+	<table class='table table-hover table-condensed'>
+	<tr>
+
+	<th> title </th>
+
+	<th> slug </th>
+
+	<th> publish </th>
+
+	<th> excerpt </th>
+
+	<th> client </th>
+
+	<th> date </th>
+
+	<th> content </th>
+
+	<th> images </th>
+
+	<th></th>
+	<th></th>
+	<th></th>
+</tr>
+	<% _.forEach(portfolios, function(portfolio) { %>
+    		<tr data-id="<%=portfolio.id %>" data-model="portfolio">
+		
+			<td><%= portfolio.title%></td>
+		
+			<td><%= portfolio.slug%></td>
+		
+			<td><%= portfolio.publish%></td>
+		
+			<td><%= portfolio.excerpt%></td>
+		
+			<td><%= portfolio.client%></td>
+		
+			<td><%= portfolio.date%></td>
+		
+			<td><%= portfolio.content%></td>
+		
+			<td><%= portfolio.images%></td>
+		
+			<td><a href="/portfolio/show/<%=portfolio.id %>"  class="btn btn-primary btn-sm" role="button">Show</a></td>
+			<td><a href="/portfolio/edit/<%=portfolio.id %>"  class="btn btn-primary btn-sm" role="button">Edit</a></td>
+
+			<td><form action="/portfolio/destroy/<%=portfolio.id %>" method="POST">
+				<input type="hidden" name="_method" value="delete"/>
+				<input type="submit" value="Delete"  class="btn btn-danger btn-sm" role="button"/>
+			</form></td>
+		</tr>
+<% }) %>
+	</table>
+	<a href="/portfolio/new/" class="btn btn-success btn-sm" role="button">New Portfolio</a> |
+	<a href="/">all scaffolds</a>
+</div>

@@ -1,0 +1,34 @@
+<form class="show">
+	<div class="form-group">
+		<h2> a page... </h2>
+		
+	<div class="form-group" style="width: 400px;">
+	<label>name</label>
+	<input value="<%= page.title %>" name="title" type="text" class="form-control" disabled/>
+	</div>
+
+	<div class="form-group" style="width: 400px;">
+	<label>name</label>
+	<input value="<%= page.slug %>" name="slug" type="text" class="form-control" disabled/>
+	</div>
+
+	<div class="form-group" style="width: 400px;">
+	<label>name</label>
+	<input value="<%= page.publish %>" name="publish" type="text" class="form-control" disabled/>
+	</div>
+
+	<div class="form-group" style="width: 400px;">
+	<label>name</label>
+	<input value="<%= page.excerpt %>" name="excerpt" type="text" class="form-control" disabled/>
+	</div>
+
+	<div class="form-group" style="width: 400px;">
+	<label>name</label>
+	<input value="<%= page.content %>" name="content" type="text" class="form-control" disabled/>
+	</div>
+
+</div>
+</div>
+<a href="/page/edit/<%=page.id %>" class="btn btn-default">Edit</a> |
+<a href="/page">Back to list</a>
+</form>

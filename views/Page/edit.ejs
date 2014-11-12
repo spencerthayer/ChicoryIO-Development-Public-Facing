@@ -1,0 +1,42 @@
+	<form action="/page/update/<%=page.id%>" method="POST" class="edit">
+	<div class="form-group">
+		<h2> editing a page... </h2>
+		<% if(flash && flash.err) { %>
+<ul class="alert alert-success">
+<% Object.keys(flash.err).forEach(function(error) { %>
+<li><%- JSON.stringify(flash.err[error]) %></li>
+<% }) %>
+</ul>
+<% } %>
+		
+	<div class="form-group" style="width: 400px;">
+	<label>name</label>
+	<input value="<%= page.title %>" name="title" type="text" class="form-control"/>
+	</div>
+
+	<div class="form-group" style="width: 400px;">
+	<label>name</label>
+	<input value="<%= page.slug %>" name="slug" type="text" class="form-control"/>
+	</div>
+
+	<div class="form-group" style="width: 400px;">
+	<label>name</label>
+	<input value="<%= page.publish %>" name="publish" type="text" class="form-control"/>
+	</div>
+
+	<div class="form-group" style="width: 400px;">
+	<label>name</label>
+	<input value="<%= page.excerpt %>" name="excerpt" type="text" class="form-control"/>
+	</div>
+
+	<div class="form-group" style="width: 400px;">
+	<label>name</label>
+	<input value="<%= page.content %>" name="content" type="text" class="form-control"/>
+	</div>
+
+		</div>
+		<input type="submit" value="Update Page" class="btn btn-default"/>
+		<a href="/page/show/<%=page.id %>" class="btn btn-danger">Cancel</a>
+	</form>
+	
+	

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Chicory Development</title>
+
+    <!-- Viewport mobile tag for sensible mobile support -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    
+    <!--  
+        Stylesheets and Preprocessors
+        ==============================
+
+        You can always bring in CSS files manually with `<link>` tags, or asynchronously
+        using a solution like AMD (RequireJS).  Or, if you like, you can take advantage 
+        of Sails' conventional asset pipeline (boilerplate Gruntfile).
+
+        By default, stylesheets from your `assets/styles` folder are included
+        here automatically (between STYLES and STYLES END). Both CSS (.css) and LESS (.less)
+        are supported. In production, your styles will be minified and concatenated into
+        a single file.
+        
+        To customize any part of the built-in behavior, just edit `tasks/pipeline.js`.
+        For example, here are a few things you could do:
+            
+            + Change the order of your CSS files
+            + Import stylesheets from other directories
+            + Use a different or additional preprocessor, like SASS, SCSS or Stylus
+    -->
+
+    <!--STYLES-->
+    <link rel="stylesheet" href="/styles/animate.css">
+    <link rel="stylesheet" href="/styles/bootstrap.min.css">
+    <link rel="stylesheet" href="/styles/bootstrapScaffold.css">
+    <link rel="stylesheet" href="/styles/custom.css">
+    <link rel="stylesheet" href="/styles/etlinefont.css">
+    <link rel="stylesheet" href="/styles/font-awesome.min.css">
+    <link rel="stylesheet" href="/styles/importer.css">
+    <link rel="stylesheet" href="/styles/style.css">
+    <!--STYLES END-->
+
+    <!-- Google Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+    
+<body id="page-top" class="index">
+
+
+	<!-- Preloader -- >
+	<div id="loader">
+	  <div id="loaderInner">	  	
+			<div class="loaderBars">
+				<span class="bar1 bar"></span>
+				<span class="bar2 bar"></span>
+				<span class="bar3 bar"></span>
+			</div>	
+	  </div>
+	</div>
+	<!-- preloader End -->
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="/#page-top">Chicory</a>
+            </div>
+
+            <!-- navbar-collapse -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden"><a href="#page-top"></a></li>
+                    <li><a class="page-scroll" href="#about">About</a></li>
+                    <li><a class="page-scroll" href="#services">Services</a></li>
+                    <li><a class="page-scroll" href="#portfolio">Portfolio</a></li>
+                    <li><a class="page-scroll" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <!-- navbar-collapse End -->
+
+        </div>
+    </nav>
+    <!-- Navigation End -->
+
+    <%- body %>
+
+    
+<!-- Contact section -->
+    <section id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center wow fadeInDown">
+                    <h2 class="section-heading">Reach Out To Us</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <form name="sentMessage" id="contactForm" novalidate>
+                        <div class="row">
+                            <div class="col-md-7 wow fadeInUp animated">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Your Name" id="name" required data-validation-required-message="Please enter your name.">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" placeholder="Your Email" id="email" required data-validation-required-message="Please enter your email address.">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="form-group">
+                                    <input type="tel" class="form-control" placeholder="Your Phone" id="phone" required data-validation-required-message="Please enter your phone number.">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="form-group">
+                                    <textarea class="form-control" placeholder="Your Message" id="message" required data-validation-required-message="Please enter a message."></textarea>
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div id="success"></div>
+                                <button type="submit" class="btn btn-x3 wow bounceIn animated">Send Message</button>
+                            </div>
+                            <!-- Contact details -->
+                            <div class="col-md-5">
+                                <div class="text-white wow fadeIn animated">
+                                    <h4>Contact details</h4>
+                                    <p>CHICORY DEVELOPMENT</p>
+                                    <p class="wow fadeInUp animated"> <i class="fa fa-map-marker fa-lg"></i> 
+                                        643 Magazine St #102 New Orleans, LA 70130
+                                    </p>
+                                    <p class="wow fadeInUp animated"> <i class="fa fa-mobile fa-lg"></i>
+                                        (555) 555-5555
+                                    </p>
+                                    <p class="wow fadeInUp animated"> <i class="fa fa-envelope-o"></i> 
+                                         contact@chicory.io
+                                    </p>
+                                    <p class="wow fadeInUp animated"> <i class="fa fa-link"></i>
+                                        www.chicory.io
+                                    </p>
+                                    
+                                    <ul class="list-inline">
+                                        <li>
+                                            <a href="#"><i class="fa fa-facebook fa-fw fa-2x"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="#"><i class="fa fa-twitter fa-fw fa-2x"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="#"><i class="fa fa-google fa-fw fa-2x"></i></a>
+                                        </li>
+                                    </ul>
+                                    
+                                </div>
+                            </div>
+
+                            <!-- Contact details End -->
+                            <div class="clearfix"></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact section End -->
+
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+                <% _.each(_.keys(sails.controllers), function(controller) { %>
+                    <a href="/<%= controller %>" class="spar-list"><%= controller %></a> | 
+                <% }) %>
+        </div>
+    </footer>
+    <!--
+        Client-side Templates
+        ========================
+
+        HTML templates are important prerequisites of modern, rich client applications.
+        To work their magic, frameworks like Backbone, Angular, Ember, and Knockout require
+        that you load these templates client-side.
+
+        By default, your Gruntfile is configured to automatically load and precompile
+        client-side JST templates in your `assets/templates` folder, then
+        include them here automatically (between TEMPLATES and TEMPLATES END).
+        
+        To customize this behavior to fit your needs, just edit `tasks/pipeline.js`.
+        For example, here are a few things you could do:
+
+            + Import templates from other directories
+            + Use a different template engine (handlebars, jade, dust, etc.)
+            + Internationalize your client-side templates using a server-side
+              stringfile before they're served.
+    -->
+
+    <!--TEMPLATES-->
+    
+    <!--TEMPLATES END-->
+
+
+    <!--
+
+      Client-side Javascript
+      ========================
+
+      You can always bring in JS files manually with `script` tags, or asynchronously
+      on the client using a solution like AMD (RequireJS).  Or, if you like, you can 
+      take advantage of Sails' conventional asset pipeline (boilerplate Gruntfile).
+
+      By default, files in your `assets/js` folder are included here
+      automatically (between SCRIPTS and SCRIPTS END).  Both JavaScript (.js) and
+      CoffeeScript (.coffee) are supported. In production, your scripts will be minified
+      and concatenated into a single file.
+      
+      To customize any part of the built-in behavior, just edit `tasks/pipeline.js`.
+      For example, here are a few things you could do:
+          
+          + Change the order of your scripts
+          + Import scripts from other directories
+          + Use a different preprocessor, like TypeScript
+
+    -->
+
+    <!--SCRIPTS-->
+    <script src="/js/dependencies/sails.io.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/cbpAnimatedHeader.js"></script>
+    <script src="/js/classie.js"></script>
+    <script src="/js/contact_me.js"></script>
+    <script src="/js/custom.js"></script>
+    <script src="/js/jqBootstrapValidation.js"></script>
+    <script src="/js/jquery-1.11.1.js"></script>
+    <script src="/js/jquery.animateNumber.min.js"></script>
+    <script src="/js/jquery.easing.min.js"></script>
+    <script src="/js/jquery.easypiechart.js"></script>
+    <script src="/js/waypoints.min.js"></script>
+    <script src="/js/wow.min.js"></script>
+    <!--SCRIPTS END-->
+  </body>
+</html>

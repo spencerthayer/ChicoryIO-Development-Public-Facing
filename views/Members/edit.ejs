@@ -1,0 +1,52 @@
+	<form action="/members/update/<%=members.id%>" method="POST" class="edit">
+	<div class="form-group">
+		<h2> editing a members... </h2>
+		<% if(flash && flash.err) { %>
+<ul class="alert alert-success">
+<% Object.keys(flash.err).forEach(function(error) { %>
+<li><%- JSON.stringify(flash.err[error]) %></li>
+<% }) %>
+</ul>
+<% } %>
+		
+	<div class="form-group" style="width: 400px;">
+	<label>name</label>
+	<input value="<%= members.firstname %>" name="firstname" type="text" class="form-control"/>
+	</div>
+
+	<div class="form-group" style="width: 400px;">
+	<label>name</label>
+	<input value="<%= members.lastname %>" name="lastname" type="text" class="form-control"/>
+	</div>
+
+	<div class="form-group" style="width: 400px;">
+	<label>name</label>
+	<input value="<%= members.slug %>" name="slug" type="text" class="form-control"/>
+	</div>
+
+	<div class="form-group" style="width: 400px;">
+	<label>name</label>
+	<input value="<%= members.publish %>" name="publish" type="text" class="form-control"/>
+	</div>
+
+	<div class="form-group" style="width: 400px;">
+	<label>name</label>
+	<input value="<%= members.biography %>" name="biography" type="text" class="form-control"/>
+	</div>
+
+	<div class="form-group" style="width: 400px;">
+	<label>name</label>
+	<input value="<%= members.quote %>" name="quote" type="text" class="form-control"/>
+	</div>
+
+	<div class="form-group" style="width: 400px;">
+	<label>name</label>
+	<input value="<%= members.picture %>" name="picture" type="text" class="form-control"/>
+	</div>
+
+		</div>
+		<input type="submit" value="Update Members" class="btn btn-default"/>
+		<a href="/members/show/<%=members.id %>" class="btn btn-danger">Cancel</a>
+	</form>
+	
+	
