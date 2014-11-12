@@ -13,7 +13,7 @@ module.exports.models = {
     schema: true,
     migrate: 'safe',   // <-- safe, drop or alter
     autoCreatedAt: true,
-    autoUpdatedAt: true,
+    autoUpdatedAt: true
   /***************************************************************************
   *                                                                          *
   * Your app's default connection. i.e. the name of one of your app's        *
@@ -31,5 +31,4 @@ module.exports.models = {
   *                                                                          *
   ***************************************************************************/
   // migrate: 'alter'
-
 };
