@@ -1,3 +1,2 @@
-# chicoryio
-
-a [Sails](http://sailsjs.org) application
+# Chicoryio
+## A shared entrepreneurship developers Co-Op

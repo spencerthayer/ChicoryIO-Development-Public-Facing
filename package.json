@@ -1,8 +1,8 @@
 {
-  "name": "chicoryio",
+  "name": "ChicoryIO",
   "private": true,
   "version": "0.0.0",
-  "description": "a Sails application",
+  "description": "A shared entrepreneurship developers Co-Op.",
   "keywords": [],
   "dependencies": {
     "sails": "~0.10.5",

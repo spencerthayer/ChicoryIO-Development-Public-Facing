@@ -13,23 +13,27 @@
 
 	<th> content </th>
 
+	<th> Testfield </th>
+
 	<th></th>
 	<th></th>
 	<th></th>
 </tr>
 	<% _.forEach(pages, function(page) { %>
     		<tr data-id="<%=page.id %>" data-model="page">
-		
+
 			<td><%= page.title%></td>
-		
+
 			<td><%= page.slug%></td>
-		
+
 			<td><%= page.publish%></td>
-		
+
 			<td><%= page.excerpt%></td>
-		
+
 			<td><%= page.content%></td>
-		
+
+			<td><%= page.test1%><br/><%= page.test2%><br/><%= page.test3%></td>
+
 			<td><a href="/page/show/<%=page.id %>"  class="btn btn-primary btn-sm" role="button">Show</a></td>
 			<td><a href="/page/edit/<%=page.id %>"  class="btn btn-primary btn-sm" role="button">Edit</a></td>
 
