@@ -20,8 +20,8 @@
                     <li><a class="page-scroll" href="#portfolio">Portfolio</a></li>
                     <li><a class="page-scroll" href="#contact">Contact</a></li>
                     <% _.each(_.keys(sails.controllers), function(controller) { %>
-                    <li style="background:#999;"><a class="page-scroll" href="/<%= controller %>"><%= controller %></a></li>
-                <% }) %>
+                        <li style="background:#999;"><a class="page-scroll" href="/<%= controller %>"><%= controller %></a></li>
+                    <% }) %>
                 </ul>
             </div>
             <!-- navbar-collapse End -->
