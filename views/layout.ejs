@@ -38,19 +38,21 @@
     <![endif]-->
 
 </head>
-    
+
 <body id="page-top" class="index">
-    
+
     <% // include blocks/preloader %>
 
     <% include blocks/navigation %>
 
-    <%- body %>
+    <div class="content body">
+        <%- body %>
+    </div>
 
     <% //include blocks/footer %>
-    
+
     <!--TEMPLATES-->
-    
+
     <!--TEMPLATES END-->
 
     <!--SCRIPTS-->
@@ -68,5 +70,6 @@
     <script src="/js/waypoints.min.js"></script>
     <script src="/js/wow.min.js"></script>
     <!--SCRIPTS END-->
-  </body>
+</body>
+
 </html>
