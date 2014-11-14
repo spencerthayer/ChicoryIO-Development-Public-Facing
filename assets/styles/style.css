@@ -544,9 +544,9 @@ header .intro-text .intro-heading {
     margin-bottom: 25px;
     text-transform: uppercase;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-size: 50px;
+    font-size: 35px;
     font-weight: 700;
-    line-height: 50px;
+    line-height: 140%;
 }
 
 
@@ -1178,7 +1178,7 @@ ul.social-buttons li a:active {
         font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
         font-size: 75px;
         font-weight: 700;
-        line-height: 75px;
+        line-height: 140%;
     }
 
     #portfolio .portfolio-item {
