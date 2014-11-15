@@ -1,0 +1,144 @@
+{
+  "data": {
+    "members": [
+      {
+        "firstname": "Spencer",
+        "lastname": "Thayer",
+        "slug": "spencer-thayer",
+        "publish": false,
+        "biography": "Nothing much.",
+        "quote": "Stop it.",
+        "picture": "",
+        "id": 1,
+        "createdAt": "2014-11-12T09:11:40.078Z",
+        "updatedAt": "2014-11-12T09:11:40.078Z"
+      }
+    ],
+    "page": [
+      {
+        "title": "Test",
+        "slug": "test",
+        "publish": false,
+        "excerpt": "test",
+        "content": "test",
+        "id": 19,
+        "createdAt": "2014-11-15T03:53:32.848Z",
+        "updatedAt": "2014-11-15T03:53:32.848Z"
+      }
+    ],
+    "portfolio": []
+  },
+  "schema": {
+    "members": {
+      "firstname": {
+        "type": "string"
+      },
+      "lastname": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      },
+      "publish": {
+        "type": "boolean"
+      },
+      "biography": {
+        "type": "string"
+      },
+      "quote": {
+        "type": "string"
+      },
+      "picture": {
+        "type": "string"
+      },
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    },
+    "page": {
+      "title": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      },
+      "publish": {
+        "type": "boolean"
+      },
+      "excerpt": {
+        "type": "string"
+      },
+      "content": {
+        "type": "string"
+      },
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    },
+    "portfolio": {
+      "title": {
+        "type": "string"
+      },
+      "slug": {
+        "type": "string"
+      },
+      "publish": {
+        "type": "boolean"
+      },
+      "excerpt": {
+        "type": "string"
+      },
+      "client": {
+        "type": "string"
+      },
+      "date": {
+        "type": "date"
+      },
+      "content": {
+        "type": "string"
+      },
+      "images": {
+        "type": "string"
+      },
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    }
+  },
+  "counters": {
+    "page": {
+      "id": 19
+    },
+    "members": {
+      "id": 1
+    },
+    "portfolio": {}
+  }
+}
