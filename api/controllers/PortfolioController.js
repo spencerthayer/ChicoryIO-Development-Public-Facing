@@ -13,7 +13,8 @@ module.exports = {
 
   create: function(req, res) {
 
-    var paramObj = {
+    var paramObj = req.params.all();
+    /*var paramObj = {
 
       title: req.param('title'),
 
@@ -31,7 +32,7 @@ module.exports = {
 
       images: req.param('images'),
 
-    }
+    }*/
 
     // Create a User with the params sent from 
     // the sign-up form --> new.ejs
@@ -87,7 +88,8 @@ module.exports = {
 
   update: function(req, res, next) {
 
-    var paramObj = {
+    var paramObj = req.params.all();
+    /*var paramObj = {
 
       title: req.param('title'),
 
@@ -105,7 +107,7 @@ module.exports = {
 
       images: req.param('images'),
 
-    }
+    }*/
 
     Portfolio.update(req.param('id'), paramObj, function portfolioUpdated(err) {
       if (err) {

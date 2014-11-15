@@ -163,6 +163,15 @@ opacity:0.1}
 
 /* 2. Basic Document Styles
 -------------------------------------------------*/
+html, body {
+    height:100%;
+}
+html {   
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
 body {
     overflow-x: hidden;
     font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -514,6 +523,11 @@ section h3.section-subheading {
 
 /* 4. Header
 -------------------------------------------------*/
+.fullscreen {
+    width:100%;
+    height:100%;
+    min-height:100%;
+}
 header {
     text-align: center;
     color: #fff;
@@ -525,6 +539,7 @@ header {
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
+    height:100%;
 }
 
 header .intro-text {

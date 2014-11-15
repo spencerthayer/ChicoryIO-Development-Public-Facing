@@ -1,29 +1,46 @@
 /**
-* Portfolio.js
-*
-* @description :: TODO: You might write a short summary of how this model works and what it represents here.
-* @docs        :: http://sailsjs.org/#!documentation/models
-*/
+ * Portfolio.js
+ *
+ * @description :: TODO: You might write a short summary of how this model works and what it represents here.
+ * @docs        :: http://sailsjs.org/#!documentation/models
+ */
 
 module.exports = {
 
-  attributes: {
+    attributes: {
 
     title : { type: 'string' },
+        title: {
+            type: 'string'
+        },
 
-    slug : { type: 'string' },
+        slug: {
+            type: 'string'
+        },
 
-    publish : { type: 'boolean' },
+        publish: {
+            type: 'boolean'
+        },
 
-    excerpt : { type: 'string' },
+        excerpt: {
+            type: 'string'
+        },
 
-    client : { type: 'string' },
+        client: {
+            type: 'string'
+        },
 
-    date : { type: 'date' },
+        date: {
+            type: 'date'
+        },
 
-    content : { type: 'string' },
+        content: {
+            type: 'string'
+        },
 
-    images : { type: 'string' }
-  }
+        images: {
+            type: 'string'
+        }
+
+    }
 };
-

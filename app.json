@@ -1,0 +1,37 @@
+{
+  "name": "ChicoryIO",
+  "description": "A shared entrepreneurship developers Co-Op.",
+  "keywords": [
+    "keystone",
+    "keystonejs",
+    "mongo",
+    "mongodb",
+    "mongoose",
+    "express",
+    "jade",
+    "blog",
+    "cms",
+    "website"
+  ],
+  "website": "http://chicory.io",
+  "repository": "https://github.com/spencerthayer/ChicoryIO-Development-Public-Facing",
+  "logo": "http://static.ipaustralia.com.au/store3/0/87/87061.1.high.jpg",
+  "env" : {
+    "NODE_ENV": "production",
+    "COOKIE_SECRET": {
+      "description": "Secret for signing cookies",
+      "generator": "secret"
+    },
+    "EMAIL_HOSTNAME": {
+      "description": "Canonical Hostname for images and links in emails",
+      "value": "",
+      "required": false
+    }
+   },
+   "addons": [
+    "mongolab:sandbox",
+    "cloudinary:starter",
+    "mandrill:starter",
+    "papertrail:choklad"
+  ]
+}

@@ -1,27 +1,41 @@
 /**
-* Members.js
-*
-* @description :: TODO: You might write a short summary of how this model works and what it represents here.
-* @docs        :: http://sailsjs.org/#!documentation/models
-*/
+ * Members.js
+ *
+ * @description :: TODO: You might write a short summary of how this model works and what it represents here.
+ * @docs        :: http://sailsjs.org/#!documentation/models
+ */
 
 module.exports = {
 
-  attributes: {
+    attributes: {
 
-    firstname : { type: 'string' },
+        firstname: {
+            type: 'string'
+        },
 
-    lastname : { type: 'string' },
+        lastname: {
+            type: 'string'
+        },
 
-    slug : { type: 'string' },
+        slug: {
+            type: 'string'
+        },
 
-    publish : { type: 'boolean' },
+        publish: {
+            type: 'boolean'
+        },
 
-    biography : { type: 'string' },
+        biography: {
+            type: 'string'
+        },
 
-    quote : { type: 'string' },
+        quote: {
+            type: 'string'
+        },
 
-    picture : { type: 'string' }
-  }
+        picture: {
+            type: 'string'
+        }
+
+    }
 };
-

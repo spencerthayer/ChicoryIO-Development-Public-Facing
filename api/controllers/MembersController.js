@@ -12,8 +12,10 @@ module.exports = {
   },
 
   create: function(req, res) {
+    
+    var paramObj = req.params.all();
 
-    var paramObj = {
+    /*var paramObj = {
 
       firstname: req.param('firstname'),
 
@@ -29,7 +31,7 @@ module.exports = {
 
       picture: req.param('picture'),
 
-    }
+    }*/
 
     // Create a User with the params sent from 
     // the sign-up form --> new.ejs
@@ -85,7 +87,8 @@ module.exports = {
 
   update: function(req, res, next) {
 
-    var paramObj = {
+    var paramObj = req.params.all();
+    /*var paramObj = {
 
       firstname: req.param('firstname'),
 
@@ -101,7 +104,7 @@ module.exports = {
 
       picture: req.param('picture'),
 
-    }
+    }*/
 
     Members.update(req.param('id'), paramObj, function membersUpdated(err) {
       if (err) {

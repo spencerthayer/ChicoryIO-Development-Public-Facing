@@ -9,7 +9,7 @@ module.exports = {
 
     attributes: {
 
-        /*title: {
+        title: {
             type: 'string'
         },
 
@@ -27,7 +27,7 @@ module.exports = {
 
         content: {
             type: 'string'
-        },*/
-        
+        }
+
     }
 };
