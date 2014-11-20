@@ -11,7 +11,7 @@
         "blog",
         "cms",
         "website"
-  ],
+],
     "website": "http://chicory.io",
     "repository": "https://github.com/spencerthayer/ChicoryIO-Development-Public-Facing",
     "logo": "http://static.ipaustralia.com.au/store3/0/87/87061.1.high.jpg",
@@ -28,9 +28,10 @@
         }
     },
     "addons": [
-    "mongolab:sandbox",
-    "cloudinary:starter",
-    "mandrill:starter",
-    "papertrail:choklad"
-  ]
+        "mongolab:sandbox",
+        "cloudinary:starter",
+        "mandrill:starter",
+        "papertrail:choklad",
+        "nodetime:free"
+]
 }

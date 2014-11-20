@@ -22,6 +22,10 @@
 
 module.exports.routes = {
 
+    
+//  'get /:slug': 'PageController.profile',
+//  'get /page/:slug': 'PageController.profile',
+    
   /***************************************************************************
   *                                                                          *
   * Make the view located at `views/homepage.ejs` (or `views/homepage.jade`, *

@@ -14,18 +14,7 @@
         "updatedAt": "2014-11-12T09:11:40.078Z"
       }
     ],
-    "page": [
-      {
-        "title": "Test",
-        "slug": "test",
-        "publish": false,
-        "excerpt": "test",
-        "content": "test",
-        "id": 19,
-        "createdAt": "2014-11-15T03:53:32.848Z",
-        "updatedAt": "2014-11-15T03:53:32.848Z"
-      }
-    ],
+    "page": [],
     "portfolio": []
   },
   "schema": {
