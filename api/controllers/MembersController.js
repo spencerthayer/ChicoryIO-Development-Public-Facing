@@ -6,137 +6,135 @@
  */
 
 module.exports = {
-	
-  'new': function(req,res){
-    res.view();    
-  },
 
-  create: function(req, res) {
-    
-    var paramObj = req.params.all();
+	'new': function (req, res) {
+		res.view();
+	},
 
-    /*var paramObj = {
+	create: function (req, res) {
 
-      firstname: req.param('firstname'),
+	    var paramObj = req.params.all();
 
-      lastname: req.param('lastname'),
+	    /*var paramObj = {
 
-      slug: req.param('slug'),
+	      firstname: req.param('firstname'),
 
-      publish: req.param('publish'),
+	      lastname: req.param('lastname'),
 
-      biography: req.param('biography'),
+	      slug: req.param('slug'),
 
-      quote: req.param('quote'),
+	      publish: req.param('publish'),
 
-      picture: req.param('picture'),
+	      biography: req.param('biography'),
 
-    }*/
+	      quote: req.param('quote'),
 
-    // Create a User with the params sent from 
-    // the sign-up form --> new.ejs
-    Members.create(paramObj, function membersCreated(err, members) {
+	      picture: req.param('picture'),
 
-      if (err) {
-        console.log(err);
-        req.session.flash = {
-          err: err
-        }
-        return res.redirect('/members/new');
-      }
+	    }*/
 
-      // res.json(members);
-      res.redirect('/members/show/' + members.id);
+		// Create a User with the params sent from
+		// the sign-up form --> new.ejs
+		Members.create(paramObj, function membersCreated(err, members) {
 
-    });
-  },
+		  if (err) {
+		    console.log(err);
+		    req.session.flash = {
+		      err: err
+		    }
+		    return res.redirect('/members/new');
+		  }
 
-  show: function(req, res, next) {
-    Members.findOne(req.param('id'), function foundMembers(err, members) {
-      if (err) return next(err);
-      if (!members) return next();
+		  // res.json(members);
+		  res.redirect('/members/show/' + members.id);
 
-      // res.json(members);
-      res.view({
-        members: members
-      });
-    });
-  },
+		});
+	},
 
-  index: function(req, res, next) {
-    Members.find(function foundMemberss(err, memberss) {
-      if (err) return next(err);
-      
-      res.view({
-        memberss: memberss
-      });
-    });
-  },
+	show: function (req, res, next) {
+		Members.findOne(req.param('id'), function foundMembers(err, members) {
+			if (err) return next(err);
+			if (!members) return next();
 
-  edit: function(req, res, next) {
+			// res.json(members);
+			res.view({
+				members: members
+			});
+		});
+	},
 
-    Members.findOne(req.param('id'), function foundMembers(err, members) {
-      if (err) return next(err);
-      if (!members) return next('members doesn\'t exist.');
+	index: function (req, res, next) {
+		Members.find(function foundMemberss(err, memberss) {
+			if (err) return next(err);
 
-      res.view({
-        members: members
-      });
-    });
-  },
+			res.view({
+				memberss: memberss
+			});
+		});
+	},
 
-  update: function(req, res, next) {
+	edit: function (req, res, next) {
 
-    var paramObj = req.params.all();
-    /*var paramObj = {
+		Members.findOne(req.param('id'), function foundMembers(err, members) {
+			if (err) return next(err);
+			if (!members) return next('members doesn\'t exist.');
 
-      firstname: req.param('firstname'),
+			res.view({
+				members: members
+			});
+		});
+	},
 
-      lastname: req.param('lastname'),
+	update: function (req, res, next) {
 
-      slug: req.param('slug'),
+	    var paramObj = req.params.all();
+	    /*var paramObj = {
 
-      publish: req.param('publish'),
+	      firstname: req.param('firstname'),
 
-      biography: req.param('biography'),
+	      lastname: req.param('lastname'),
 
-      quote: req.param('quote'),
+	      slug: req.param('slug'),
 
-      picture: req.param('picture'),
+	      publish: req.param('publish'),
 
-    }*/
+	      biography: req.param('biography'),
 
-    Members.update(req.param('id'), paramObj, function membersUpdated(err) {
-      if (err) {
-        console.log(err);
+	      quote: req.param('quote'),
 
-        req.session.flash = {
-          err: err
-        }
+	      picture: req.param('picture'),
 
-        return res.redirect('/members/edit/' + req.param('id'));
-      }
+	    }*/
 
-      res.redirect('/members/show/' + req.param('id'));
-    });
-  },
+		Members.update(req.param('id'), paramObj, function membersUpdated(err) {
+			if (err) {
+				console.log(err);
 
-  destroy: function(req, res, next) {
+				req.session.flash = {
+					err: err
+				}
 
-    Members.findOne(req.param('id'), function foundMembers(err, members) {
-      if (err) return next(err);
+				return res.redirect('/members/edit/' + req.param('id'));
+			}
 
-      if (!members) return next('Members doesn\'t exist.');
+			res.redirect('/members/show/' + req.param('id'));
+		});
+	},
 
-      Members.destroy(req.param('id'), function membersDestroyed(err) {
-        if (err) return next(err);
-    });        
+	destroy: function (req, res, next) {
 
-      res.redirect('/members');
+		Members.findOne(req.param('id'), function foundMembers(err, members) {
+			if (err) return next(err);
 
-    });
-  }
- 
+			if (!members) return next('Members doesn\'t exist.');
+
+		  	Members.destroy(req.param('id'), function membersDestroyed(err) {
+				if (err) return next(err);
+			});
+
+			res.redirect('/members');
+
+		});
+	}
 
 };
-
