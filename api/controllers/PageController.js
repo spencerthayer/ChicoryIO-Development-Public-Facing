@@ -12,7 +12,7 @@ module.exports = {
     },
 
     create: function (req, res) {
-
+        
         var paramObj = req.params.all();
 
         /*var paramObj = {
@@ -28,7 +28,7 @@ module.exports = {
             content: req.param('content'),
 
         }*/
-
+        
         // Create a User with the params sent from
         // the sign-up form --> new.ejs
         Page.create(paramObj, function pageCreated(err, page) {
@@ -82,9 +82,9 @@ module.exports = {
     },
 
     update: function (req, res, next) {
-
+        
         var paramObj = req.params.all();
-
+        
         /*var paramObj = {
 
             title: req.param('title'),
@@ -98,7 +98,7 @@ module.exports = {
             content: req.param('content'),
 
         }*/
-
+        
         Page.update(req.param('id'), paramObj, function pageUpdated(err) {
             if (err) {
                 console.log(err);
@@ -129,5 +129,6 @@ module.exports = {
 
         });
     }
+
 
 };

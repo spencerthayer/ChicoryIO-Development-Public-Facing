@@ -6,136 +6,140 @@
  */
 
 module.exports = {
+	
+  'new': function(req,res){
+    res.view();    
+  },
 
-	'new': function (req, res) {
-		res.view();
-	},
+  create: function(req, res) {
 
-	create: function (req, res) {
+    var paramObj = req.params.all();
+    /*var paramObj = {
 
-		var paramObj = req.params.all();
-		/*var paramObj = {
+      title: req.param('title'),
 
-		  title: req.param('title'),
+      slug: req.param('slug'),
 
-		  slug: req.param('slug'),
+      publish: req.param('publish'),
 
-		  publish: req.param('publish'),
+      excerpt: req.param('excerpt'),
 
-		  excerpt: req.param('excerpt'),
+      client: req.param('client'),
 
-		  client: req.param('client'),
+      date: req.param('date'),
 
-		  date: req.param('date'),
+      content: req.param('content'),
 
-		  content: req.param('content'),
+      images: req.param('images'),
 
-		  images: req.param('images'),
+    }*/
 
-		}*/
+    // Create a User with the params sent from 
+    // the sign-up form --> new.ejs
+    Portfolio.create(paramObj, function portfolioCreated(err, portfolio) {
 
-		// Create a User with the params sent from
-		// the sign-up form --> new.ejs
-		Portfolio.create(paramObj, function portfolioCreated(err, portfolio) {
+      if (err) {
+        console.log(err);
+        req.session.flash = {
+          err: err
+        }
+        return res.redirect('/portfolio/new');
+      }
 
-		  if (err) {
-		    console.log(err);
-		    req.session.flash = {
-		      err: err
-		    }
-		    return res.redirect('/portfolio/new');
-		  }
+      // res.json(portfolio);
+      res.redirect('/portfolio/show/' + portfolio.id);
 
-		  // res.json(portfolio);
-		  res.redirect('/portfolio/show/' + portfolio.id);
+    });
+  },
 
-		});
-	},
+  show: function(req, res, next) {
+    Portfolio.findOne(req.param('id'), function foundPortfolio(err, portfolio) {
+      if (err) return next(err);
+      if (!portfolio) return next();
 
-	show: function (req, res, next) {
-		Portfolio.findOne(req.param('id'), function foundPortfolio(err, portfolio) {
-		  if (err) return next(err);
-		  if (!portfolio) return next();
+      // res.json(portfolio);
+      res.view({
+        portfolio: portfolio
+      });
+    });
+  },
 
-		  // res.json(portfolio);
-		  res.view({
-		    portfolio: portfolio
-		  });
-		});
-	},
+  index: function(req, res, next) {
+    Portfolio.find(function foundPortfolios(err, portfolios) {
+      if (err) return next(err);
+      
+      res.view({
+        portfolios: portfolios
+      });
+    });
+  },
 
-	index: function (req, res, next) {
-		Portfolio.find(function foundPortfolios(err, portfolios) {
-		  if (err) return next(err);
+  edit: function(req, res, next) {
 
-		  res.view({
-		    portfolios: portfolios
-		  });
-		});
-	},
+    Portfolio.findOne(req.param('id'), function foundPortfolio(err, portfolio) {
+      if (err) return next(err);
+      if (!portfolio) return next('portfolio doesn\'t exist.');
 
-	edit: function (req, res, next) {
-		Portfolio.findOne(req.param('id'), function foundPortfolio(err, portfolio) {
-		  if (err) return next(err);
-		  if (!portfolio) return next('portfolio doesn\'t exist.');
+      res.view({
+        portfolio: portfolio
+      });
+    });
+  },
 
-		  res.view({
-		    portfolio: portfolio
-		  });
-		});
-	},
+  update: function(req, res, next) {
 
-	update: function (req, res, next) {
-		var paramObj = req.params.all();
-		/*var paramObj = {
+    var paramObj = req.params.all();
+    /*var paramObj = {
 
-		  title: req.param('title'),
+      title: req.param('title'),
 
-		  slug: req.param('slug'),
+      slug: req.param('slug'),
 
-		  publish: req.param('publish'),
+      publish: req.param('publish'),
 
-		  excerpt: req.param('excerpt'),
+      excerpt: req.param('excerpt'),
 
-		  client: req.param('client'),
+      client: req.param('client'),
 
-		  date: req.param('date'),
+      date: req.param('date'),
 
-		  content: req.param('content'),
+      content: req.param('content'),
 
-		  images: req.param('images'),
+      images: req.param('images'),
 
-		}*/
+    }*/
 
-		Portfolio.update(req.param('id'), paramObj, function portfolioUpdated(err) {
-		  if (err) {
-		    console.log(err);
+    Portfolio.update(req.param('id'), paramObj, function portfolioUpdated(err) {
+      if (err) {
+        console.log(err);
 
-		    req.session.flash = {
-		      err: err
-		    }
+        req.session.flash = {
+          err: err
+        }
 
-		    return res.redirect('/portfolio/edit/' + req.param('id'));
-		  }
+        return res.redirect('/portfolio/edit/' + req.param('id'));
+      }
 
-		  res.redirect('/portfolio/show/' + req.param('id'));
-		});
-	},
+      res.redirect('/portfolio/show/' + req.param('id'));
+    });
+  },
 
-	destroy: function (req, res, next) {
+  destroy: function(req, res, next) {
 
-		Portfolio.findOne(req.param('id'), function foundPortfolio(err, portfolio) {
-		  if (err) return next(err);
+    Portfolio.findOne(req.param('id'), function foundPortfolio(err, portfolio) {
+      if (err) return next(err);
 
-		  if (!portfolio) return next('Portfolio doesn\'t exist.');
+      if (!portfolio) return next('Portfolio doesn\'t exist.');
 
-		  Portfolio.destroy(req.param('id'), function portfolioDestroyed(err) {
-		    if (err) return next(err);
-		});
+      Portfolio.destroy(req.param('id'), function portfolioDestroyed(err) {
+        if (err) return next(err);
+    });        
 
-		  res.redirect('/portfolio');
+      res.redirect('/portfolio');
 
-		});
-	}
+    });
+  }
+ 
 
 };
+
